@@ -70,30 +70,31 @@ import { EditTransfertComponent } from './modules/transfert/components/edit-tran
 import { AddUserComponent } from './modules/user/components/add-user/add-user.component';
 import { EditUserComponent } from './modules/user/components/edit-user/edit-user.component';
 import { PropositionComponent } from './modules/proposition/components/proposition/proposition.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
-const routes:Routes=[
-  {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
-  {path:'account',component:AccountComponent,pathMatch:'full'},
-  {path:'client',component:ClientComponent,pathMatch:'full'},
-  {path:'configuration',component:ConfigurationComponent,pathMatch:'full'},
-  {path:'instruction',component:InstructionComponent,pathMatch:'full'},
-  {path:'invoice',component:InvoiceComponent,pathMatch:'full'},
-  {path:'invoicee',component:InvoiceeComponent,pathMatch:'full'},
-  {path:'objective',component:ObjectiveComponent,pathMatch:'full'},
-  {path:'product',component:ProductComponent,pathMatch:'full'},
-  {path:'proposition',component:PropositionComponent,pathMatch:'full'},
-  {path:'revenue',component:RevenueComponent,pathMatch:'full'},
-  {path:'supplier',component:SupplierComponent,pathMatch:'full'},
-  {path:'tax',component:TaxComponent,pathMatch:'full'},
-  {path:'transaction',component:TransactionComponent,pathMatch:'full'},
-  {path:'transfert',component:TransfertComponent,pathMatch:'full'},
-  {path:'user',component:UserComponent,pathMatch:'full'},
-  {path:'role',component:RoleComponent,pathMatch:'full'},
-  {path:'login',component:LoginComponent,pathMatch:'full'},
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'**',redirectTo:'login',pathMatch:'full'}]
+const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
+  { path: 'account', component: AccountComponent, pathMatch: 'full' },
+  { path: 'client', component: ClientComponent, pathMatch: 'full' },
+  { path: 'configuration', component: ConfigurationComponent, pathMatch: 'full' },
+  { path: 'instruction', component: InstructionComponent, pathMatch: 'full' },
+  { path: 'invoice', component: InvoiceComponent, pathMatch: 'full' },
+  { path: 'invoicee', component: InvoiceeComponent, pathMatch: 'full' },
+  { path: 'objective', component: ObjectiveComponent, pathMatch: 'full' },
+  { path: 'product', component: ProductComponent, pathMatch: 'full' },
+  { path: 'proposition', component: PropositionComponent, pathMatch: 'full' },
+  { path: 'revenue', component: RevenueComponent, pathMatch: 'full' },
+  { path: 'supplier', component: SupplierComponent, pathMatch: 'full' },
+  { path: 'tax', component: TaxComponent, pathMatch: 'full' },
+  { path: 'transaction', component: TransactionComponent, pathMatch: 'full' },
+  { path: 'transfert', component: TransfertComponent, pathMatch: 'full' },
+  { path: 'user', component: UserComponent, pathMatch: 'full' },
+  { path: 'role', component: RoleComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '**', redirectTo: 'login', pathMatch: 'full' }]
 
 
 @NgModule({
@@ -163,14 +164,15 @@ const routes:Routes=[
     ViewTransactionComponent,
     ViewTransfertComponent,
     ViewUserComponent,
-   
+
   ],
   imports: [
-  
-BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: ''}],
+  providers: [{ provide: APP_BASE_HREF, useValue: '' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

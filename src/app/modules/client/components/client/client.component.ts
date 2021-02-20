@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import ClientMessage from 'src/app/main/messages/ClientMessage';
+import ClientTestService from 'src/app/main/mocks/ClientTestService';
 import { URLLoader } from './../../../../configs/URLLoader';
 
 @Component({
@@ -7,16 +9,44 @@ import { URLLoader } from './../../../../configs/URLLoader';
   styleUrls: ['./client.component.css']
 })
 export class ClientComponent extends URLLoader implements OnInit {
-  showsummary:boolean=false
-  showgraphic:boolean=false
-  
-  constructor() {
+  showsummary: boolean = false
+  showgraphic: boolean = false
+
+  clients$
+  id = 0
+
+
+  constructor(private clientTestService: ClientTestService, private messageService: ClientMessage) {
     super()
-   }
-  
 
-ngOnInit() {
- super.loadScripts();
-}
+  }
 
+  setId(id) {
+    this.id = id
+  }
+
+  edit(id) {
+    this.setId(id)
+    this.clientTestService.ID.next(id.toString())
+  }
+
+  delete(id) {
+    var r = confirm("Voulez-vous supprimer cet enregistrement ?");
+    if (r) {
+      this.setId(id)
+      this.clientTestService.remove(parseInt(id))
+      super.show('Confirmation', this.messageService.confirmationMessages.delete, 'success')
+    }
+
+  }
+
+  ngOnInit() {
+    super.loadScripts();
+    this.getAll()
+  }
+
+  getAll() {
+    this.clients$ = this.clientTestService.getAll()
+
+  }
 }

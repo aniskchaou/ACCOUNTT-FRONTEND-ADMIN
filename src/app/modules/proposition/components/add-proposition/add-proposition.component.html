@@ -1,24 +1,43 @@
-<form method="POST"  accept-charset="UTF-8"><input name="_token" type="hidden" value="FnJi5x3dwPrGxujNBtH3dYYEgB7MJzIDxH0kJ1Hh">
-    <input type="hidden" name="_token" id="token" value="FnJi5x3dwPrGxujNBtH3dYYEgB7MJzIDxH0kJ1Hh">
+<form method="POST" accept-charset="UTF-8" [formGroup]="propositionForm">
+
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
                     <div class="row">
+
                         <div class="col-md-6">
                             <div class="form-group" id="customer-box">
                                 <div class="input-group">
                                     <label for="customer_id">Client</label>
-                                    <div class="selectric-wrapper selectric-form-control selectric-customer-sel selectric-font-style selectric-selectric"><div class="selectric-hide-select"><select class="form-control customer-sel font-style selectric" id="customer" data-url="https://demo.rajodiya.com/accountgo/proposal/customer" required="required" name="customer_id" tabindex="-1"><option value="">Select Customer</option><option value="1">Keir</option><option value="2">Protiong</option><option value="3">Ida F. Mullen</option><option value="4">Teresa R McRae</option><option value="5">Joel O Dolan</option><option value="6">James</option></select></div><div class="selectric">
-                                      </div>
-                                        <div class="selectric-items" tabindex="-1"></div></div>
+                                    <div
+                                        class="selectric-wrapper selectric-form-control selectric-customer-sel selectric-font-style selectric-selectric">
+                                        <div class="selectric-hide-select"><select
+                                                class="form-control customer-sel font-style selectric" id="customer"
+                                                required="required" name="customer_id" tabindex="-1">
+                                                <option value="">Select Customer</option>
+                                                <option value="1">Keir</option>
+                                                <option value="2">Protiong</option>
+                                                <option value="3">Ida F. Mullen</option>
+                                                <option value="4">Teresa R McRae</option>
+                                                <option value="5">Joel O Dolan</option>
+                                                <option value="6">James</option>
+                                            </select></div>
+                                        <div class="selectric">
+                                        </div>
+                                        <div class="selectric-items" tabindex="-1"></div>
+                                    </div>
                                 </div>
                             </div>
                             <div id="customer_detail" class="d-none">
                             </div>
                         </div>
+
+
                         <div class="col-md-6">
                             <div class="row">
+
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="issue_date">Date d'émission</label>
@@ -28,31 +47,54 @@
                                                     <i class="fas fa-calendar"></i>
                                                 </div>
                                             </div>
-                                            <input class="form-control datepicker" required="required" name="issue_date" type="text" value="" id="issue_date">
+                                            <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                formControlName="supplier" class="form-control datepicker"
+                                                required="required" name="issue_date" type="text" value=""
+                                                id="issue_date">
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <div class="col-md-6">
                                     <div class="input-group">
                                         <label for="category_id">Categorie</label>
-                                        <div class="selectric-wrapper selectric-form-control selectric-customer-sel selectric-font-style selectric-selectric"><div class="selectric-hide-select"><select class="form-control customer-sel font-style selectric" required="required" id="category_id" name="category_id" tabindex="-1"><option value="" selected="selected">Select Category</option><option value="4">Maintenance Sales</option><option value="5">Product Sales</option></select></div><div class="selectric">
-                                            </div></div>
+                                        <div
+                                            class="selectric-wrapper selectric-form-control selectric-customer-sel selectric-font-style selectric-selectric">
+                                            <div class="selectric-hide-select"><select
+                                                    class="form-control customer-sel font-style selectric"
+                                                    required="required" id="category_id" name="category_id"
+                                                    tabindex="-1">
+                                                    <option value="" selected="selected">Select Category</option>
+                                                    <option value="4">Maintenance Sales</option>
+                                                    <option value="5">Product Sales</option>
+                                                </select></div>
+                                            <div class="selectric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="custom-control custom-checkbox mt-4">
+                                        <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                            formControlName="supplier" class="custom-control-input" type="checkbox"
+                                            name="discount_apply" id="discount_apply">
+                                        <label class="custom-control-label" for="discount_apply">Remise</label>
                                     </div>
                                 </div>
 
                                 <div class="col-md-6">
-                                    <div class="custom-control custom-checkbox mt-4">
-                                        <input class="custom-control-input" type="checkbox" name="discount_apply" id="discount_apply">
-                                        <label class="custom-control-label" for="discount_apply">Remise</label>
+                                    <div class="tab-pane fade show" id="tab-2" role="tabpanel">
+
+
                                     </div>
                                 </div>
-                                                                            <div class="col-md-6">
-                                        <div class="tab-pane fade show" id="tab-2" role="tabpanel">
-                                          
-    
-                                        </div>
-                                    </div>
-                                                                    </div>
+
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -65,7 +107,8 @@
                 <div class="card-header">
                     <h4>Produits</h4>
                     <div class="card-header-action">
-                        <a href="#" data-repeater-create="" class="btn btn-icon icon-left btn-primary" data-toggle="modal" data-target="#add-bank">
+                        <a href="#" data-repeater-create="" class="btn btn-icon icon-left btn-primary"
+                            data-toggle="modal" data-target="#add-bank">
                             <i class="fas fa-plus"></i>Ajouter produit
                         </a>
                     </div>
@@ -74,117 +117,129 @@
                     <div class="table-responsive">
                         <table class="table table-striped" data-repeater-list="items" id="sortable-table">
                             <thead>
-                            <tr>
-                                <th>Article</th>
-                                <th>Quantité</th>
-                                <th>Prix </th>
-                                <th>Tax (%)</th>
-                                <th>Remise</th>
-                                <th class="text-right">Montont <br><small class="text-danger">HT</small></th>
-                                <th></th>
-                            </tr>
+                                <tr>
+                                    <th>Article</th>
+                                    <th>Quantité</th>
+                                    <th>Prix </th>
+                                    <th>Tax (%)</th>
+                                    <th>Remise</th>
+                                    <th class="text-right">Montont <br><small class="text-danger">HT</small></th>
+                                    <th></th>
+                                </tr>
                             </thead>
                             <tbody class="ui-sortable" data-repeater-item="">
-                            <tr>
-                                <td width="25%">
-                                    <select class="form-control font-style item"  required="required" name="items[0][item]">
-                                        <option value="" selected="selected">--</option>
-                                        <option value="1">Bicycle Accessories</option><option value="2">Bicycle Clothing</option>
-                                        <option value="3">Bicycle parts</option><option value="4">Helmet</option>
-                                        <option value="5">test test</option></select>
-                                </td>
-                                <td>
-      
-                                </td>
-                                <td>
-                                    <div class="form-group">
-                                        <div class="input-group colorpickerinput">
-                                            <input class="form-control price" required="required" placeholder="Price" 
-                                            name="items[0][price]" type="text" value="">
-                                            <div class="input-group-append">
-                                                <div class="input-group-text">
-                                                    $
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group">
-                                        <div class="input-group colorpickerinput">
-                                            <div class="taxes"></div>
-                                            <input class="form-control tax" name="items[0][tax]" type="hidden" value="">
-                                            <input class="form-control itemTaxPrice" name="items[0][itemTaxPrice]" type="hidden" value="">
-                                            <input class="form-control itemTaxRate" name="items[0][itemTaxRate]" type="hidden" value="">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="form-group">
-                                        <div class="input-group colorpickerinput">
-                                            <input class="form-control discount" required="required" 
-                                            placeholder="Discount" 
-                                            name="items[0][discount]" type="text" value="">
-                                            <div class="input-group-append">
+                                <tr>
+                                    <td width="25%">
+                                        <select class="form-control font-style item" required="required"
+                                            name="items[0][item]">
+                                            <option value="" selected="selected">--</option>
+                                            <option value="1">Bicycle Accessories</option>
+                                            <option value="2">Bicycle Clothing</option>
+                                            <option value="3">Bicycle parts</option>
+                                            <option value="4">Helmet</option>
+                                            <option value="5">test test</option>
+                                        </select>
+                                    </td>
+                                    <td>
 
-                                                <div class="input-group-text">
-                                                    $
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="input-group colorpickerinput">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                    formControlName="supplier" class="form-control price"
+                                                    required="required" placeholder="Price" name="items[0][price]"
+                                                    type="text" value="">
+                                                <div class="input-group-append">
+                                                    <div class="input-group-text">
+                                                        $
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="text-right amount">
-                                    0.00
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-<tr>
-                                <td colspan="2">   <textarea class="form-control" rows="2"
-                                     placeholder="Description" 
-                                    name="items[0][description]" cols="50"></textarea></td>
-                                <td colspan="4"></td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="input-group colorpickerinput">
+                                                <div class="taxes"></div>
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                    formControlName="supplier" class="form-control tax"
+                                                    name="items[0][tax]" type="hidden" value="">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                    formControlName="supplier" class="form-control itemTaxPrice"
+                                                    name="items[0][itemTaxPrice]" type="hidden" value="">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                    formControlName="supplier" class="form-control itemTaxRate"
+                                                    name="items[0][itemTaxRate]" type="hidden" value="">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-group">
+                                            <div class="input-group colorpickerinput">
+                                                <input [ngClass]="{ 'is-invalid': submitted && f.supplier.errors }"
+                                                    formControlName="supplier" class="form-control discount"
+                                                    required="required" placeholder="Discount" name="items[0][discount]"
+                                                    type="text" value="">
+                                                <div class="input-group-append">
+
+                                                    <div class="input-group-text">
+                                                        $
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-right amount">
+                                        0.00
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> <textarea class="form-control" rows="2" placeholder="Description"
+                                            name="items[0][description]" cols="50"></textarea></td>
+                                    <td colspan="4"></td>
+                                </tr>
                             </tbody>
                             <tfoot>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td></td>
-                                <td><strong>Sub Total ($)</strong></td>
-                                <td class="text-right subTotal">0.00</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td></td>
-                                <td><strong>Remise ($)</strong></td>
-                                <td class="text-right totalDiscount">0.00</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td></td>
-                                <td><strong>Tax ($)</strong></td>
-                                <td class="text-right totalTax">0.00</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td><strong>Total  ($)</strong></td>
-                                <td class="text-right totalAmount"></td>
-                                <td></td>
-                            </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td><strong>Sub Total ($)</strong></td>
+                                    <td class="text-right subTotal">0.00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td><strong>Remise ($)</strong></td>
+                                    <td class="text-right totalDiscount">0.00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td><strong>Tax ($)</strong></td>
+                                    <td class="text-right totalTax">0.00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td><strong>Total ($)</strong></td>
+                                    <td class="text-right totalAmount"></td>
+                                    <td></td>
+                                </tr>
                             </tfoot>
                         </table>
                     </div>
@@ -193,9 +248,17 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-12 text-right">
-            <a href="#" class="btn btn-secondary">Cancel</a>
-            <input class="btn btn-primary" type="submit" value="Create">
+        <div class="col-sm-6">
+            <div class="form-group">
+                <button (click)="add()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+                <button (click)="reset()" type="button" class="btn btn-danger">
+                    <i class="fas fa-times"></i>
+                    Annuler
+                </button>
+            </div>
         </div>
     </div>
-    </form>
+</form>

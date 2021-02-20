@@ -1,5 +1,9 @@
-<form method="POST" action="https://demo.rajodiya.com/accountgo/bank-account" accept-charset="UTF-8"><input name="_token" type="hidden" value="FnJi5x3dwPrGxujNBtH3dYYEgB7MJzIDxH0kJ1Hh">
+<form method="POST" accept-charset="UTF-8" [formGroup]="accountForm">
+
+
     <div class="row">
+
+
         <div class="form-group  col-md-6">
             <label for="holder_name">Nom du titulaire de la banque </label>
             <div class="input-group">
@@ -8,9 +12,19 @@
                         <i class="fas fa-address-card"></i>
                     </div>
                 </div>
-                <input class="form-control" required="required" name="holder_name" type="text" value="" id="holder_name">
+                <input [ngClass]="{ 'is-invalid': submitted && f.holder_name.errors }" formControlName="holder_name"
+                    class="form-control" required="required" name="holder_name" type="text" value="" id="holder_name">
+
+
+                <div *ngIf="submitted && f.holder_name.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.holder_name.errors.required">
+                        {{msg.validationMessage.holder_name}}</div>
+                </div>
+
             </div>
         </div>
+
+
         <div class="form-group  col-md-6">
             <label for="bank_name">Nom de la banque </label>
             <div class="input-group">
@@ -19,9 +33,17 @@
                         <i class="fas fa-university"></i>
                     </div>
                 </div>
-                <input class="form-control" required="required" name="bank_name" type="text" value="" id="bank_name">
+                <input [ngClass]="{ 'is-invalid': submitted && f.bank_name.errors }" formControlName="bank_name"
+                    class="form-control" required="required" name="bank_name" type="text" value="" id="bank_name">
+
+                <div *ngIf="submitted && f.bank_name.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.bank_name.errors.required">
+                        {{msg.validationMessage.bank_name}}</div>
+                </div>
             </div>
         </div>
+
+
         <div class="form-group  col-md-6">
             <label for="account_number">Numéro de compte </label>
             <div class="input-group">
@@ -30,9 +52,20 @@
                         <i class="fas fa-notes-medical"></i>
                     </div>
                 </div>
-                <input class="form-control" required="required" name="account_number" type="text" value="" id="account_number">
+                <input [ngClass]="{ 'is-invalid': submitted && f.account_number.errors }"
+                    formControlName="account_number" class="form-control" required="required" name="account_number"
+                    type="text" value="" id="account_number">
+
+                <div *ngIf="submitted && f.account_number.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.account_number.errors.required">
+                        {{msg.validationMessage.account_number}}</div>
+                </div>
+
+
             </div>
         </div>
+
+
         <div class="form-group  col-md-6">
             <label for="opening_balance">Solde d'ouverture </label>
             <div class="input-group">
@@ -41,27 +74,61 @@
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                 </div>
-                <input class="form-control" required="required" step="0.01" name="opening_balance" type="number" value="" id="opening_balance">
+                <input [ngClass]="{ 'is-invalid': submitted && f.opening_balance.errors }"
+                    formControlName="opening_balance" class="form-control" required="required" step="0.01"
+                    name="opening_balance" type="number" value="" id="opening_balance">
+
+                <div *ngIf="submitted && f.opening_balance.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.opening_balance.errors.required">
+                        {{msg.validationMessage.opening_balance}}</div>
+                </div>
             </div>
         </div>
+
+
         <div class="form-group  col-md-6">
-            <label for="contact_number">Numéro de contact </label>
+            <label for="contact_number">Téléphone</label>
             <div class="input-group">
                 <div class="input-group-prepend">
                     <div class="input-group-text">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                 </div>
-                <input class="form-control" required="required" name="contact_number" type="text" value="" id="contact_number">
+                <input [ngClass]="{ 'is-invalid': submitted && f.contact_number.errors }"
+                    formControlName="contact_number" class="form-control" required="required" name="contact_number"
+                    type="text" value="" id="contact_number">
+                <div *ngIf="submitted && f.contact_number.errors" class="alert alert-danger">
+                    <div *ngIf="submitted && f.contact_number.errors.required">
+                        {{msg.validationMessage.contact_number}}</div>
+                </div>
             </div>
         </div>
+
+
         <div class="form-group  col-md-12">
             <label for="bank_address">Adresse de la banque </label>
-            <textarea class="form-control" required="required" name="bank_address" cols="50" rows="10" id="bank_address"></textarea>
+            <textarea [ngClass]="{ 'is-invalid': submitted && f.bank_address.errors }" formControlName="bank_address"
+                class="form-control" required="required" name="bank_address" cols="50" rows="10"
+                id="bank_address"></textarea>
+
+            <div *ngIf="submitted && f.bank_address.errors" class="alert alert-danger">
+                <div *ngIf="submitted && f.bank_address.errors.required">
+                    {{msg.validationMessage.bank_address}}</div>
+            </div>
         </div>
-            <div class="col-md-12 text-right">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler </button>
-            <input class="btn btn-primary" type="submit" value="Créer ">
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <button (click)="add()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+                <button (click)="reset()" type="button" class="btn btn-danger">
+                    <i class="fas fa-times"></i>
+                    Annuler
+                </button>
+            </div>
         </div>
+
     </div>
-    </form>
+</form>

@@ -16,36 +16,57 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr *ngFor="let c of clients$">
+                        <td>{{c.name}}</td>
+                        <td>{{c.phone}}</td>
+                        <td>{{c.email}}</td>
+                        <td>{{c.Solde}}</td>
+                        <td>
+                            <button type="button" data-toggle="modal" (click)="edit(c.id)" data-target="#editBuy"
+                                class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm" (click)="delete(c.id)"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
+
+
+                    </tr>
+
                     <tr>
                         <td>Raymond Daviau</td>
                         <td>05.99.30.99.98</td>
                         <td>RaymondDaviau@teleworm.us</td>
                         <td>22%</td>
                         <td>
-                            <button type="button" data-toggle="modal" data-target="#editClient"class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button></td>
+                            <button type="button" data-toggle="modal" data-target="#editClient"
+                                class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
 
 
                     </tr>
                 </tbody>
-                <tfoot><tr>
-                    <th>Nom</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Solde</th>
-                    <th>Actions</th>
-                   
-                </tr></tfoot>
+                <tfoot>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Solde</th>
+                        <th>Actions</th>
+
+                    </tr>
+                </tfoot>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addClient" >Ajouter</button>
-            
-            
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                data-target="#addClient">Ajouter</button>
+
+
             <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -55,19 +76,19 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                             
+
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="modal fade" id="viewClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true">
+            <div class="modal fade" id="viewClient" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -77,18 +98,18 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                             
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="modal fade" id="editClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true">
+            <div class="modal fade" id="editClient" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -98,7 +119,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                             
+
                         </div>
                     </div>
                 </div>
