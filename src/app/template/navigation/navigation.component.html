@@ -1,183 +1,187 @@
- <!-- Sidebar -->
- <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <a style="background-color: white;" class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="index.html">
-         <div class="sidebar-brand-icon rotate-n-15">
-            
-         </div>
-         <div class="sidebar-brand-text mx-3" ><img src="assets/img/logo.png" width="120" height="40"></div>
-     </a>
+    <a style="background-color: white;" class="sidebar-brand d-flex align-items-center justify-content-center"
+        routerLink="index.html">
 
-     <!-- Divider -->
-     <hr class="sidebar-divider my-0">
+        <div class="sidebar-brand-icon rotate-n-15">
+        </div>
+        <div class="sidebar-brand-text mx-3">
+            <img src="assets/img/logo.png" width="120" height="40">
+        </div>
+    </a>
 
-     <!-- Nav Item - Dashboard -->
-     <li class="nav-item" >
-         <a routerLinkActive="activeLink" class="nav-link" routerLink="/dashboard">
-             <i class="fas fa-fw fa-tachometer-alt"></i>
-             <span>Tableau de bord</span></a>
-     </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-     <!-- Divider -->
-     <hr class="sidebar-divider">
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link" routerLink="/dashboard">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Tableau de bord</span></a>
+    </li>
 
-     <!-- Heading -->
-     
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-     <!-- Nav Item - Pages Collapse Menu -
-     <li class="nav-item" >
-         <a routerLinkActive="activeLink"  class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-         aria-expanded="true" aria-controls="collapseTwo" >
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Personnel</span>
-         </a>
-         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a class="collapse-item" routerLinkActive="activeLink"  routerLink="/user">Utilisateurs</a>
-                 <a class="collapse-item" routerLinkActive="activeLink"  routerLink="/role">Role</a>
-                 
-             </div>
-         </div>
-     </li>
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link" href="#" routerLink="/products">
+            <i class="fas fa-fw fa-cookie-bite"></i>
+            <span>Articles</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link" href="#" routerLink="/clients">
+            <i class="fas fa-fw fa-user-friends"></i>
+            <span>Clients</span>
+        </a>
+    </li>
+
+
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link" href="#" routerLink="/suppliers">
+            <i class="fas fa-fw fa-building"></i>
+            <span>Fournisseurs</span>
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link" href="#" routerLink="/propositions">
+            <i class="fas fa-fw fa-file-invoice-dollar"></i>
+            <span>Devis</span>
+        </a>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse6" aria-expanded="true"
+            aria-controls="collapse6">
+            <i class="fas fa-fw fa-piggy-bank"></i>
+            <span>Banques</span>
+        </a>
+        <div id="collapse6" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/accounts">Compte</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/transferts">Transfert</a>
+
+
+            </div>
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse7" aria-expanded="true"
+            aria-controls="collapse7">
+            <i class="fas fa-fw fa-money-bill-alt"></i>
+            <span>Revenus</span>
+        </a>
+        <div id="collapse7" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoices">Factures</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/revenues">Recettes</a>
+            </div>
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse8" aria-expanded="true"
+            aria-controls="collapse8">
+            <i class="fas fa-fw fa-wallet"></i>
+            <span>Dépenses</span>
+        </a>
+        <div id="collapse8" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/bill">Factures</a>
+                <!--<a routerLinkActive="activeLink" class="collapse-item" routerLink="/payments">Paiement</a>-->
+
+
+            </div>
+        </div>
+    </li>
+    <!--
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse10" aria-expanded="true"
+            aria-controls="collapse10">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Rapport</span>
+        </a>
+        <div id="collapse10" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/expense-report">Dépenses</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/revenue-report">Revenus</a>
+
+
+            </div>
+        </div>
+    </li>
     -->
 
-      <li class="nav-item">
-         <a routerLinkActive="activeLink"  class="nav-link" href="#" routerLink="/product">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Produits et services</span>
-         </a>
-     </li>
 
-      <li class="nav-item">
-         <a routerLinkActive="activeLink" class="nav-link" href="#"routerLink="/client">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Clients</span>
-         </a>
-     </li>
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse111" aria-expanded="true" aria-controls="collapse111">
+            <i class="fas fa-fw fa-asterisk"></i>
+            <span>Paramètres</span>
+        </a>
+        <div id="collapse111" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
 
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/tax">Tax</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/product-categories">Categorie de
+                    produit</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/revenue-categories">Categorie
+                    revenus</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/expense-categories">Categorie
+                    dépenses</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/units">Unité</a>
+            </div>
+        </div>
+    </li>
 
-      <li class="nav-item">
-         <a routerLinkActive="activeLink" class="nav-link" href="#"routerLink="/supplier" >
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Fournisseurs</span>
-         </a>
-     </li>
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-key"></i>
+            <span>Utilisateurs</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
 
-      <li class="nav-item">
-         <a routerLinkActive="activeLink" class="nav-link" href="#" routerLink="/proposition" 
-             >
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Devis</span>
-         </a>
-     </li>
+                <a class="collapse-item" routerLinkActive="activeLink" routerLink="/users">Utilisateurs</a>
+                <a class="collapse-item" routerLinkActive="activeLink" routerLink="/roles">Role</a>
 
-
-      <li class="nav-item">
-         <a  class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapse6"
-             aria-expanded="true" aria-controls="collapse6">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Banques</span>
-         </a>
-         <div id="collapse6" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/account">Compte</a>
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/transfert">Transfert</a>
-               
-                 
-             </div>
-         </div>
-     </li>
+            </div>
+        </div>
+    </li>
 
 
-      <li class="nav-item">
-         <a  class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapse7"
-             aria-expanded="true" aria-controls="collapse7">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Revenus</span>
-         </a>
-         <div id="collapse7" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoice">Factures</a>
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/revenue">Recettes</a>
-             </div>
-         </div>
-     </li>
 
-
-     <li class="nav-item">
-         <a  class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapse8"
-             aria-expanded="true" aria-controls="collapse8">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Dépenses</span>
-         </a>
-         <div id="collapse8" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/invoicee">Factures</a>
-                 <a routerLinkActive="activeLink" class="collapse-item" >Paiement</a>
-               
-                 
-             </div>
-         </div>
-     </li>
-     <!--
-      <li class="nav-item">
-         <a routerLinkActive="activeLink" class="nav-link" href="#"routerLink="/objective" >
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Objectif</span>
-         </a>
-     </li>
-    -->
-       <li class="nav-item">
-         <a  class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapse10"
-             aria-expanded="true" aria-controls="collapse10">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Rapport</span>
-         </a>
-         <div id="collapse10" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a routerLinkActive="activeLink" class="collapse-item">Basic transaction</a>
-                 <a routerLinkActive="activeLink" class="collapse-item">Instruction de compte</a>
-                
-                 
-             </div>
-         </div>
-     </li>
-
-
-      <li class="nav-item">
-         <a  routerLinkActive="activeLink" class="nav-link collapsed" href="#"  data-toggle="collapse" data-target="#collapse11"
-             aria-expanded="true" aria-controls="collapse11">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Constante</span>
-         </a>
-         <div id="collapse11" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-             <div class="bg-white py-2 collapse-inner rounded">
-                 
-                 <a routerLinkActive="activeLink" class="collapse-item" routerLink="/tax">Imports</a>
-               
-                 
-             </div>
-         </div>
-     </li>
-
-       <li class="nav-item">
-         <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" routerLink="/configuration">
-             <i class="fas fa-fw fa-cog"></i>
-             <span>Configuration</span>
-         </a>
-
-        </li>
-
-    
-   
+    <li class="nav-item">
+        <a routerLinkActive="activeLink" class="nav-link collapsed" href="#" data-toggle="collapse"
+            data-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Configuration</span>
+        </a>
+        <div id="collapse15" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/email-config">Email</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/system-config">Système</a>
+                <a routerLinkActive="activeLink" class="collapse-item" routerLink="/entreprise-config">Entreprise</a>
+            </div>
+        </div>
+    </li>
 
 
 
 
 
- </ul>
+
+
+
+</ul>

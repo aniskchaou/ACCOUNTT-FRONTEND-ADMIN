@@ -1,21 +1,21 @@
-<h1 class="h3 mb-2 text-gray-800">Transferts</h1>
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
   <div class="card-body">
+    <app-transfert-navigation></app-transfert-navigation>
     <div class="table-responsive">
       <table class="table table-bordered" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Date </th>
-            <th>Du compte</th>
-            <th>Compte a donner</th>
-            <th>Montant</th>
-            <th>Référence</th>
-            <th>Description</th>
-            <th>Actions</th>
-
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
+            <th>{{fields.field_table_5}}</th>
+            <th>{{fields.field_table_6}}</th>
+            <th>{{fields.field_table_7}}</th>
           </tr>
         </thead>
         <tbody>
@@ -27,8 +27,7 @@
             <td>2898H73</td>
             <td>Achat </td>
             <td>
-              <button type="button" data-toggle="modal" data-target="#editTransfert" class="btn btn-warning btn-sm"><i
-                  class="fas fa-edit"></i></button>
+
               <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
             </td>
           </tr>
@@ -47,72 +46,7 @@
       </table>
       <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
         data-target="#addTransfert">Ajouter</button>
-
-      <div class="modal fade" id="addTransfert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-add-transfert></app-add-transfert>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="editTransfert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-edit-transfert></app-edit-transfert>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal fade" id="viewTransfert" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">View</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-view-transfert></app-view-transfert>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
+      <app-modal-transfert></app-modal-transfert>
     </div>
   </div>
 </div>

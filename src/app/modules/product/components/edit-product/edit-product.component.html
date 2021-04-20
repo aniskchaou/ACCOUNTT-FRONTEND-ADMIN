@@ -1,139 +1,151 @@
-<form method="POST" accept-charset="UTF-8"><input name="_token" type="hidden"
-    value="sZAb2W3Mq3pt0nFwNsFUETFznuoRFsOuMsW7xiJB">
-<div class="row">
-    <div class="col-md-6">
+<form method="POST" accept-charset="UTF-8">
 
 
-        <div class="form-group">
-            <label for="name">Nom </label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fas fa-address-card"></i>
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="form-group">
+                <label for="name">Nom </label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="fas fa-address-card"></i>
+                        </div>
                     </div>
-                </div>
-                <input class="form-control" required="required" name="name" type="text" value="" id="name">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="sku">PATINAGE </label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="fas fa-key"></i>
-                    </div>
-                </div>
-                <input class="form-control" required="required" name="sku" type="text" value="" id="sku">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="form-group  col-md-12">
-        <label for="description">Description </label>
-        <textarea class="form-control" rows="2" name="description" cols="50" id="description"></textarea>
-    </div>
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="sale_price">Prix de vente </label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="far fa-money-bill-alt"></i>
-                    </div>
-                </div>
-                <input class="form-control" required="required" step="0.01" name="sale_price" type="number" value=""
-                    id="sale_price">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-md-6">
-        <div class="form-group">
-            <label for="purchase_price">Prix d'achat </label>
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">
-                        <i class="far fa-money-bill-alt"></i>
-                    </div>
-                </div>
-                <input class="form-control" required="required" step="0.01" name="purchase_price" type="number"
-                    value="" id="purchase_price">
-            </div>
-        </div>
-    </div>
-
-    <div class="form-group  col-md-6">
-        <label for="tax_id">Impôt </label>
-        <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
-            <div class="selectric-hide-select"><select class="form-control font-style selectric" multiple
-                    required="required" name="tax_id[]" tabindex="-1">
-                    <option value="1">
-                        CGST</option>
-                    <option value="2">SGST</option>
-                </select></div>
-
-        </div>
-
-    </div>
-    <div class="form-group  col-md-6">
-        <label for="category_id">Catégorie </label>
-        <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
-            <div class="selectric-hide-select"><select class="form-control font-style selectric" required="required"
-                    id="category_id" name="category_id" tabindex="-1">
-                    <option value="1">Accessories</option>
-                    <option value="2">Clothing</option>
-                    <option value="3">Parts</option>
-                </select></div>
-            
-        </div>
-    </div>
-    <div class="form-group  col-md-6">
-        <label for="unit_id">Unité </label>
-        <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
-            <div class="selectric-hide-select"><select class="form-control font-style selectric" required="required"
-                    id="unit_id" name="unit_id" tabindex="-1">
-                    <option value="1">Inch</option>
-                    <option value="2">Pc</option>
-                </select>
-            </div>
-
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label class="d-block">Type </label>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="customRadio5" name="type"
-                            value="product" checked="checked" onclick="hide_show(this)">
-                        <label class="custom-control-label" for="customRadio5">Produit </label>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input" id="customRadio6" name="type"
-                            value="service" onclick="hide_show(this)">
-                        <label class="custom-control-label" for="customRadio6">Service </label>
-                    </div>
+                    <input [(ngModel)]="model.name" class="form-control" required="required" name="name" type="text"
+                        value="{{model.name}}" id="name">
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-6">
 
+
+
+        <div class="form-group  col-md-12">
+            <label for="description">Description </label>
+            <textarea [(ngModel)]="model.description" class="form-control" rows="2" name="description" cols="50"
+                id="description"></textarea>
+
+
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="sale_price">Prix de vente </label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="far fa-money-bill-alt"></i>
+                        </div>
+                    </div>
+                    <input [(ngModel)]="model.sale_price" class="form-control" required="required" step="0.01"
+                        name="sale_price" type="number" value="{{model.sale_price}}" id="sale_price">
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="purchase_price">Prix d'achat </label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <i class="far fa-money-bill-alt"></i>
+                        </div>
+                    </div>
+                    <input [(ngModel)]="model.purchase_price" class="form-control" required="required" step="0.01"
+                        name="purchase_price" type="number" value="{{model.purchase_price}}" id="purchase_price">
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group  col-md-6">
+            <label for="tax_id">Impôt </label>
+            <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
+                <div class="selectric-hide-select">
+                    <select [(ngModel)]="model.tax_id" class="form-control font-style selectric" required="required"
+                        name="tax_id" tabindex="-1">
+                        <option value="1">
+                            TVA</option>
+
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group  col-md-6">
+            <label for="category_id">Catégorie </label>
+            <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
+                <div class="selectric-hide-select">
+                    <select [(ngModel)]="model.category_id" class="form-control font-style selectric"
+                        required="required" id="category_id" name="category_id" tabindex="-1">
+                        <option value="1">Accessories</option>
+                        <option value="2">Clothing</option>
+                        <option value="3">Parts</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group  col-md-6">
+            <label for="unit_id">Unité </label>
+            <div class="selectric-wrapper selectric-form-control selectric-font-style selectric-selectric">
+                <div class="selectric-hide-select">
+                    <select [(ngModel)]="model.unit_id" class="form-control font-style selectric" required="required"
+                        id="unit_id" name="unit_id" tabindex="-1">
+                        <option value="1">Inch</option>
+                        <option value="2">Pc</option>
+                    </select>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="d-block">Type </label>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="custom-control custom-radio">
+                            <input [(ngModel)]="model.type" type="radio" class="custom-control-input" id="customRadio5"
+                                name="type" value="product" checked="checked">
+                            <label class="custom-control-label" for="customRadio5">Produit </label>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="custom-control custom-radio">
+                            <input [(ngModel)]="model.type" type="radio" class="custom-control-input" id="customRadio6"
+                                name="type" value="service">
+                            <label class="custom-control-label" for="customRadio6">Service </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <button (click)="edit()" type="button" class="btn btn-info">
+                    <i class="fas fa-save"></i>
+                    Sauvegarder
+                </button>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12 text-right">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler </button>
-        <input class="btn btn-primary" type="submit" value="Créer ">
-    </div>
-</div>
 </form>

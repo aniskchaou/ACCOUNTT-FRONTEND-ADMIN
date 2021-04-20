@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { URLLoader } from 'src/app/main/configs/URLLoader';
+import { URLLoader } from 'src/app/main/configs/loader';
 import AccountMessage from 'src/app/main/messages/AccountMessage';
 import AccountTestService from 'src/app/main/mocks/AccountTestService';
 import AccountValidation from 'src/app/main/validations/AccountValidation';

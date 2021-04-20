@@ -1,1 +1,29 @@
-<p>view-client works!</p>
+<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+
+    <tbody *ngIf="client">
+        <tr>
+            <td>Nom</td>
+            <td>{{client.name}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{client.email}}</td>
+        </tr>
+        <tr>
+            <td>Téléphone</td>
+            <td>{{client.phone}}</td>
+        </tr>
+        <tr>
+            <td>Solde</td>
+            <td>{{client.solde}}</td>
+        </tr>
+        <tr>
+            <td>Ville</td>
+            <td>{{client.shipping_city}}</td>
+        </tr>
+        <tr>
+            <td>Pays</td>
+            <td>{{client.shipping_country}}</td>
+        </tr>
+    </tbody>
+</table>

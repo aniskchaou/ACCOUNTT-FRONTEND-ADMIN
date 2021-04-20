@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import RevenueTestService from 'src/app/main/mocks/RevenueTestService';
 
 @Component({
   selector: 'app-view-revenue',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewRevenueComponent implements OnInit {
 
-  constructor() { }
+  revenue
+  constructor(private _router: Router, private revenueTestService: RevenueTestService) { }
 
   ngOnInit(): void {
+
+    this.revenueTestService.ID.subscribe(id => {
+      this.revenue = this.revenueTestService.get(parseInt(id))
+    })
   }
 
 }

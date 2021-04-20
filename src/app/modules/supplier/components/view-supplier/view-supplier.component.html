@@ -1,1 +1,29 @@
-<p>view-supplier works!</p>
+<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+
+    <tbody *ngIf="supplier">
+        <tr>
+            <td>Nom</td>
+            <td>{{supplier.name}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{supplier.email}}</td>
+        </tr>
+        <tr>
+            <td>Téléphone</td>
+            <td>{{supplier.phone}}</td>
+        </tr>
+        <tr>
+            <td>Solde</td>
+            <td>{{supplier.solde}}</td>
+        </tr>
+        <tr>
+            <td>Ville</td>
+            <td>{{supplier.shipping_city}}</td>
+        </tr>
+        <tr>
+            <td>Pays</td>
+            <td>{{supplier.shipping_country}}</td>
+        </tr>
+    </tbody>
+</table>

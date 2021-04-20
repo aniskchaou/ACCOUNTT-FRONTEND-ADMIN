@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import ProductTestService from 'src/app/main/mocks/ProductTestService';
 
 @Component({
   selector: 'app-view-product',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
-
-  constructor() { }
+  product
+  constructor(private _router: Router, private productTestService: ProductTestService) { }
 
   ngOnInit(): void {
+
+    this.productTestService.ID.subscribe(id => {
+      this.product = this.productTestService.get(parseInt(id))
+    })
   }
 
 }

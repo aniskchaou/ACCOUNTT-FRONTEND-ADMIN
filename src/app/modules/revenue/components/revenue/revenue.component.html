@@ -1,18 +1,19 @@
-<h1 class="h3 mb-2 text-gray-800">Recettes</h1>
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
   <div class="card-body">
     <div class="table-responsive">
+      <app-revenue-navigation></app-revenue-navigation>
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Date</th>
-            <th>Montant</th>
-            <th>Compte</th>
-            <th>Client</th>
-            <th>Actions</th>
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
+            <th>{{fields.field_table_5}}</th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +27,6 @@
                   class="fas fa-edit"></i></button>
               <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
             </td>
-
           </tr>
         </tbody>
         <tfoot>
@@ -41,69 +41,7 @@
       </table>
       <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
         data-target="#addRevenue">Ajouter</button>
-
-      <div class="modal fade" id="addRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-add-revenue></app-add-revenue>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="editRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-edit-revenue></app-edit-revenue>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="modal fade" id="viewRevenue" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-view-revenue></app-view-revenue>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-modal-revenue></app-modal-revenue>
     </div>
   </div>
 </div>

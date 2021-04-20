@@ -4,3 +4,9 @@
     background-color: #fafafa;
     color: #4e73df!important;
   }
+
+:host {
+    background-color: #f3f4f7;
+    size: 200px 200px;
+    display: block;
+}

@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { URLLoader } from 'src/app/main/configs/URLLoader';
+import { URLLoader } from 'src/app/main/configs/loader';
 import PropositionMessage from 'src/app/main/messages/PropositionMessage';
 import PropositionTestService from 'src/app/main/mocks/PropositionTestService';
+import { HTTPService } from 'src/app/main/services/http.service';
+
+
 import PropositionValidation from 'src/app/main/validations/PropositionValidation';
 
 @Component({
@@ -19,7 +22,9 @@ export class AddPropositionComponent extends URLLoader implements OnInit {
 
   get f() { return this.propositionForm.controls; }
 
-  constructor(private validation: PropositionValidation, private message: PropositionMessage,
+  constructor(private httpService: HTTPService,
+    private validation: PropositionValidation,
+    private message: PropositionMessage,
     private propositionTestService: PropositionTestService) {
     super()
     this.propositionForm = this.validation.formGroupInstance
@@ -38,13 +43,13 @@ export class AddPropositionComponent extends URLLoader implements OnInit {
     this.submitted = true;
 
     if (this.validation.checkValidation()) {
-      this.propositionTestService.create(this.propositionForm.value)
+      this.httpService.create(this.propositionForm.value)
       super.show('Confirmation', this.msg.confirmationMessages.add, 'success')
-
     }
+  }
 
-
-
+  addMockTest() {
+    this.propositionTestService.create(this.propositionForm.value)
   }
 
 }

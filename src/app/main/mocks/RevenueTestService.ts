@@ -5,34 +5,45 @@ import Service from "../interfaces/Service";
 @Injectable({
     providedIn: 'root'
 })
+
+
 export default class RevenueTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _revenue = []
-    static id = 0
+    static _revenue = [{
+        'id': 1,
+        'date': '12 / 11 / 2020',
+        'amount': '2316',
+        'account_id': '5494 9374 2335 5226',
+        'description': '',
+        'customer_id': 'Noémi Goguen',
+        'category_id': '',
+        'reference': ''
+    }]
+    static id = 2
 
     public getAll() {
-        return this._revenue;
+        return RevenueTestService._revenue;
     }
 
     public get(id) {
-        return this._revenue.find(item => item.id === id);
+        return RevenueTestService._revenue.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = RevenueTestService.id
-        this._revenue.push(data);
+        RevenueTestService._revenue.push(data);
         RevenueTestService.id++
-        console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._revenue.findIndex(item => item === old);
-        this._revenue[foundIndex] = data;
+        var foundIndex = RevenueTestService._revenue.findIndex(item => item.id === data.id);
+        RevenueTestService._revenue[foundIndex] = data;
     };
 
-    public remove(id) {
-        this._revenue.splice(id, 1);
+    public remove(revenue) {
+
+        RevenueTestService._revenue.splice(RevenueTestService._revenue.indexOf(revenue), 1);
     };
 
 

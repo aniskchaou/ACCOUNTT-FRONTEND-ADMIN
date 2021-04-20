@@ -1,18 +1,19 @@
-<h1 class="h3 mb-2 text-gray-800">Clients</h1>
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
     <div class="card-body">
+        <app-client-navigation></app-client-navigation>
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Contact</th>
-                        <th>Email</th>
-                        <th>Solde</th>
-                        <th>Actions</th>
+                        <th>{{fields.field_table_1}}</th>
+                        <th>{{fields.field_table_2}}</th>
+                        <th>{{fields.field_table_3}}</th>
+                        <th>{{fields.field_table_4}}</th>
+                        <th>{{fields.field_table_5}}</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,30 +21,23 @@
                         <td>{{c.name}}</td>
                         <td>{{c.phone}}</td>
                         <td>{{c.email}}</td>
-                        <td>{{c.Solde}}</td>
+                        <td>{{c.solde}}</td>
                         <td>
-                            <button type="button" data-toggle="modal" (click)="edit(c.id)" data-target="#editBuy"
+                            <button (click)="addProposition(c.id)" title="career devis" data-togglee="tooltip"
+                                type="button" data-toggle="modal" data-target="#addProposition"
+                                class="btn btn-success btn-sm"><i class="fas fa-file-invoice"></i></button>
+                            <button (click)="addInvoice(c.id)" title="creer facture" data-togglee="tooltip"
+                                type="creer facture" data-toggle="modal" data-target="#addInvoice"
+                                class="btn btn-primary btn-sm">
+                                <i class="fas fa-receipt"></i></button>
+                            <button (click)="view(c.id)" title="voir client" data-togglee="tooltip" type="creer facture"
+                                data-toggle="modal" data-target="#viewClient" class="btn btn-info btn-sm"><i
+                                    class="fas fa-eye"></i></button>
+                            <button type="button" data-toggle="modal" (click)="edit(c.id)" data-target="#editClient"
                                 class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
                             <button type="button" class="btn btn-danger btn-sm" (click)="delete(c.id)"><i
                                     class="fas fa-trash-alt"></i></button>
                         </td>
-
-
-                    </tr>
-
-                    <tr>
-                        <td>Raymond Daviau</td>
-                        <td>05.99.30.99.98</td>
-                        <td>RaymondDaviau@teleworm.us</td>
-                        <td>22%</td>
-                        <td>
-                            <button type="button" data-toggle="modal" data-target="#editClient"
-                                class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm"><i
-                                    class="fas fa-trash-alt"></i></button>
-                        </td>
-
-
                     </tr>
                 </tbody>
                 <tfoot>
@@ -53,77 +47,13 @@
                         <th>Email</th>
                         <th>Solde</th>
                         <th>Actions</th>
-
                     </tr>
                 </tfoot>
             </table>
-            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
-                data-target="#addClient">Ajouter</button>
-
-
-            <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <app-add-client></app-add-client>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="modal fade" id="viewClient" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <app-view-client></app-view-client>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal fade" id="editClient" tabindex="-1" role="dialog"
-                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <app-edit-client></app-edit-client>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addClient"><i
+                    class="fas fa-plus-square"></i></button>
+            <a class="btn btn-info btn-sm" routerLink="/client-grid"><i class="fas fa-th-large"></i></a>
+            <app-modal-client></app-modal-client>
         </div>
     </div>
 </div>

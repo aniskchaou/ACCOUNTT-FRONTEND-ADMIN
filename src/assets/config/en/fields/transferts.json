@@ -1,0 +1,10 @@
+{
+    "title": "Transferts",
+    "field_table_1": "Date",
+    "field_table_2": "From",
+    "field_table_3": "To",
+    "field_table_4": "Ammount",
+    "field_table_5": "Reference",
+    "field_table_6": "Description",
+    "field_table_7": "Actions"
+}

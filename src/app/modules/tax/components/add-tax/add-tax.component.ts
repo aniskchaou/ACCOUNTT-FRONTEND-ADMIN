@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { URLLoader } from 'src/app/main/configs/URLLoader';
+import { URLLoader } from 'src/app/main/configs/loader';
 import TaxMessage from 'src/app/main/messages/TaxMessage';
 import TaxTestService from 'src/app/main/mocks/TaxTestService';
 import TaxValidation from 'src/app/main/validations/TaxValidation copy';

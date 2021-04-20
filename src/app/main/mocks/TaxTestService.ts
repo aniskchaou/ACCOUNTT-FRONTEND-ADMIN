@@ -7,32 +7,37 @@ import Service from "../interfaces/Service";
 })
 export default class TaxTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _tax = []
-    static id = 0
+    static _tax = [{
+        'id': 1,
+        'name': 'TVA',
+        'rate': '20'
+    }]
+    static id = 2
 
     public getAll() {
-        return this._tax;
+        return TaxTestService._tax;
     }
 
     public get(id) {
-        return this._tax.find(item => item.id === id);
+        return TaxTestService._tax.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = TaxTestService.id
-        this._tax.push(data);
+        TaxTestService._tax.push(data);
         TaxTestService.id++
-        console.log(data)
+
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._tax.findIndex(item => item === old);
-        this._tax[foundIndex] = data;
+        var foundIndex = TaxTestService._tax.findIndex(item => item.id === data.id);
+        TaxTestService._tax[foundIndex] = data;
     };
 
-    public remove(id) {
-        this._tax.splice(id, 1);
+    public remove(tax) {
+
+        TaxTestService._tax.splice(TaxTestService._tax.indexOf(tax), 1);
     };
 
 

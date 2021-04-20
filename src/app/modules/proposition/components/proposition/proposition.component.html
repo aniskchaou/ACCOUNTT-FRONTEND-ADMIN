@@ -1,6 +1,6 @@
-<h1 class="h3 mb-2 text-gray-800">Devis</h1>
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
 
-<!-- DataTales Example -->
+
 <div class="card shadow mb-4">
 
   <div class="card-body">
@@ -8,22 +8,37 @@
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Client</th>
-            <th>Catégorie</th>
-            <th>Date</th>
-            <th>Statut</th>
-            <th>Actions</th>
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
+            <th>{{fields.field_table_5}}</th>
           </tr>
         </thead>
+        <tfoot>
+          <tr>
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
+            <th>{{fields.field_table_5}}</th>
+          </tr>
+        </tfoot>
         <tbody>
           <tr>
             <td>Seymour Michel</td>
             <td>Maintenance</td>
             <td>12/12/2020</td>
-            <td class="badge badge-success">Accepté</td>
+            <td> <span class="badge badge-success">Accepté</span></td>
 
             <td>
-              <button type="button" data-toggle="modal" data-target="#editProduct" class="btn btn-warning btn-sm"><i
+              <button title="convertir en facture" data-togglee="tooltip" type="button"
+                class="btn btn-primary btn-sm"><i class="fas fa-exchange-alt"></i></button>
+              <button title="dupliquer" data-togglee="tooltip" type="button" data-toggle="modal"
+                data-target="#editClient" class="btn btn-success btn-sm"><i class="fas fa-copy"></i></button>
+              <button title="voir" data-togglee="tooltip" type="button" data-toggle="modal"
+                data-target="#viewProposition" class="btn btn-secondary btn-sm"><i class="fas fa-eye"></i></button>
+              <button type="button" data-toggle="modal" data-target="#editProposition" class="btn btn-warning btn-sm"><i
                   class="fas fa-edit"></i></button>
               <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
             </td>
@@ -33,26 +48,8 @@
       <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
         data-target="#addProposal">Nouveau</button>
 
-      <div class="modal fade" id="addProposal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-add-proposition></app-add-proposition>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <app-modal-proposition></app-modal-proposition>
 
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </div>

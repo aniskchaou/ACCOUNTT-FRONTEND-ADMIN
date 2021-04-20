@@ -1,0 +1,56 @@
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
+
+
+<div class="card shadow mb-4">
+  <div class="card-body">
+    <app-bill-navigation></app-bill-navigation>
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
+            <th>{{fields.field_table_5}}</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12/11/2020</td>
+            <td>12/11/2021</td>
+            <td>7000$</td>
+            <td> <span class="badge badge-success">Active</span></td>
+            <td>
+              <button type="button" data-toggle="modal" data-target="#copyInvoice" class="btn btn-primary btn-sm"><i
+                  class="fas fa-copy"></i></button>
+              <button type="button" data-toggle="modal" data-target="#sendInvoice" class="btn btn-secondary btn-sm"><i
+                  class="fas fa-paper-plane"></i></button>
+              <button type="button" data-toggle="modal" data-target="#downloadInvoice" class="btn btn-info btn-sm"><i
+                  class="fas fa-download"></i></button>
+              <button type="button" data-toggle="modal" data-target="#viewInvoice" class="btn btn-success btn-sm"><i
+                  class="fas fa-eye"></i></button>
+              <button type="button" data-toggle="modal" data-target="#editInvoice" class="btn btn-warning btn-sm"><i
+                  class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Date emission</th>
+            <th>Date écheance</th>
+            <th>Montant</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </tfoot>
+      </table>
+      <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+        data-target="#addInvoice">Ajouter</button>
+      <app-modal-bill></app-modal-bill>
+    </div>
+  </div>
+</div>

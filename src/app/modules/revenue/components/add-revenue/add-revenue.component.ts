@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { URLLoader } from 'src/app/main/configs/URLLoader';
+import { URLLoader } from 'src/app/main/configs/loader';
 import RevenueMessage from 'src/app/main/messages/RevenueMessage';
 import RevenueTestService from 'src/app/main/mocks/RevenueTestService';
 import RevenueValidation from 'src/app/main/validations/RevenueValidation';

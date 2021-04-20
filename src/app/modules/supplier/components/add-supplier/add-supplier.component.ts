@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { URLLoader } from 'src/app/main/configs/URLLoader';
+import { URLLoader } from 'src/app/main/configs/loader';
 import SupplierMessage from 'src/app/main/messages/SupplierMessage';
 import SupplierTestService from 'src/app/main/mocks/SupplierTestService';
 import SupplierValidation from 'src/app/main/validations/SupplierValidation';

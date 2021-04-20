@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
+  menus = ['objective']
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserTestService } from 'src/app/main/mocks/UserTestService';
 
 @Component({
   selector: 'app-view-user',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserComponent implements OnInit {
 
-  constructor() { }
+  user
+  constructor(private _router: Router, private userTestService: UserTestService) { }
 
   ngOnInit(): void {
+
+    this.userTestService.ID.subscribe(id => {
+      this.user = this.userTestService.get(parseInt(id))
+    })
   }
 
 }

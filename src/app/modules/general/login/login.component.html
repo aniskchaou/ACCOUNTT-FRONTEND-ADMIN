@@ -1,24 +1,37 @@
+<br />
+<div class="body">
 
-
-    <div class="p-5">
-        <div class="text-center">
-            <img src="assets/img/logo.png" width="120" height="40">
+    <form action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <img src="assets/img/logo.png" alt="Avatar" class="avatar">
         </div>
-        <form class="user">
-            <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." value="admin">
-            </div>
-            <div class="form-group">
-                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" value="admin">
-            </div>
-           
-            <button type="submit" class="btn btn-primary btn-user btn-block">
-                Connexion
-            </button>
-            
-          
-        </form>
-        <hr>
-       
-    </div>
+        <hr />
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" value="admin@admin.com" required>
 
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" value="admin" name="psw" required>
+
+            <label for="role"><b>Role </b></label>
+            <div>
+                <label class="radio-inline">
+                    <input type="radio" name="optradio" checked="true"
+                        style="padding-left:15px;"><span>Administrateur</span>
+                </label>
+                <label class="radio-inline" style="padding-left:15px;">
+                    <input type="radio" name="optradio" style="padding-left:15px;"><span>Comptable</span>
+                </label>
+            </div>
+
+            <label for="language"><b>Langue</b></label>
+            <select id="language" name="select" class="language">
+                <option value="fr">🇫🇷 Francais</option>
+                <option value="en">🇬🇧 English</option>
+                <option value="de">🇩🇪 Deutsch</option>
+            </select>
+        </div>
+
+        <button routerLink="/dashboard" type="submit">Login</button>
+    </form>
+</div>

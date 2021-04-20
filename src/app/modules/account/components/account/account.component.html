@@ -1,125 +1,48 @@
-<h1 class="h3 mb-2 text-gray-800">Comptes</h1>
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
 
-<!-- DataTales Example -->
+
 <div class="card shadow mb-4">
 
   <div class="card-body">
+    <app-account-navigation></app-account-navigation>
     <div class="table-responsive">
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Nom du titulaire</th>
-            <th>Numéro de compte</th>
-            <th>Nom de la banque</th>
-            <th>Actions</th>
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
 
           </tr>
         </thead>
         <tbody>
-
           <tr *ngFor="let a of accounts$">
-            <td>{{a.holder}}</td>
-            <td>{{a.contact_number}}</td>
+            <td>{{a.holder_name}}</td>
+            <td>{{a.account_number}}</td>
             <td>{{a.bank_name}}</td>
-
             <td>
-              <button type="button" data-toggle="modal" (click)="edit(a.id)" data-target="#editBuy"
+              <button type="button" data-toggle="modal" (click)="edit(a.id)" data-target="#editAccount"
                 class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
               <button type="button" class="btn btn-danger btn-sm" (click)="delete(a.id)"><i
                   class="fas fa-trash-alt"></i></button>
             </td>
           </tr>
-
-
-          <tr>
-            <td>Noémi Goguen</td>
-            <td>5494 9374 2335 5226</td>
-            <td>Banque populaire</td>
-
-            <td>
-              <button type="button" data-toggle="modal" data-target="#editAccount" class="btn btn-warning btn-sm"><i
-                  class="fas fa-edit"></i></button>
-              <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-            </td>
-          </tr>
         </tbody>
         <tfoot>
           <tr>
-            <th>Nom du titulaire</th>
-            <th>Numéro de compte</th>
-            <th>Nom de la banque</th>
-            <th>Actions</th>
-
+            <th>{{fields.field_table_1}}</th>
+            <th>{{fields.field_table_2}}</th>
+            <th>{{fields.field_table_3}}</th>
+            <th>{{fields.field_table_4}}</th>
           </tr>
         </tfoot>
       </table>
+
+
       <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
         data-target="#addAccount">Ajouter</button>
-
-      <div class="modal fade" id="addAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-add-account></app-add-account>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal fade" id="viewAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-view-account></app-view-account>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="modal fade" id="editAccount" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <app-edit-account></app-edit-account>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-modal-account></app-modal-account>
     </div>
   </div>
 </div>

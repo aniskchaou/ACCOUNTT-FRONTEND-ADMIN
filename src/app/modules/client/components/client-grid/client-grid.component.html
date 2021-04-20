@@ -1,0 +1,99 @@
+<h1 class="h3 mb-2 text-gray-800">Clients</h1>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <div>
+            <div class="row">
+
+
+
+
+                <div *ngFor="let c of clients$" class="card col-md-4">
+                    <img src="assets/img/undraw_profile.svg" class="card-img-top" alt="..." />
+                    <div class="card-body">
+                        <h5 class="card-title">{{c.name}}</h5>
+                        <p class="card-text">
+                            {{c.email}}
+                        </p>
+                        <hr />
+                        <button href="#!" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></button>
+                        <button href="#!" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                        <button href="#!" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <br><br>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addClient">
+                Ajouter</button>
+            <a class="btn btn-info btn-sm" routerLink="/client"><i class="fas fa-th-list"></i> List</a>
+
+            <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Nouveau</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <app-add-client></app-add-client>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="viewClient" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Voir</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <app-view-client></app-view-client>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="editClient" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Edit</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <app-edit-client></app-edit-client>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

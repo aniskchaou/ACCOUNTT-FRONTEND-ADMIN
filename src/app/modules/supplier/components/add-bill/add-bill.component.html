@@ -1,0 +1,71 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <div class="container">
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col">
+                    <div class="row111">
+                        {{model.name}} <br>
+                        {{model.email}} <br>
+                        {{model.phone}} <br>
+
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="float-right">
+                        <button class="btn btn-success" type="button" (click)="addProduct()"> ajouter article </button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th># </th>
+                        <th> Product </th>
+                        <th> Qty </th>
+                        <th> Price </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr > -->
+                    <tr *ngFor="let product of productArray; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>
+                            <select class="form-control" maxlength="50" readonly required id="threshold"
+                                name="product.Id" [(ngModel)]="product.Id" #threshold="ngModel">
+                                <option value="0" selected> Select </option>
+                                <option *ngFor="let p of productList" value="{{p}}">
+                                    {{ p }}
+                                </option>
+                            </select>
+                        </td>
+                        <td>
+                            <input [(ngModel)]="product.qte" required class="form-control" type="number"
+                                name="product.qte" />
+                        </td>
+                        <td>
+                            <input [(ngModel)]="product.price" required class="form-control" type="number"
+                                name="product.price" />
+                        </td>
+                        <td>
+                            <button class="btn btn-default" type="button" (click)="deleteProduct(i)">
+                                Delete </button>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Total : </td>
+                        <td>{{total}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

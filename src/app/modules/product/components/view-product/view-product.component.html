@@ -1,1 +1,26 @@
-<p>view-product works!</p>
+<table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+
+    <tbody *ngIf="product">
+        <tr>
+            <td>Nom</td>
+            <td>{{product.name}}</td>
+        </tr>
+        <tr>
+            <td>Prix de vente</td>
+            <td>{{product.sale_price}}</td>
+        </tr>
+        <tr>
+            <td>Prix d'achat</td>
+            <td>{{product.purchase_price}}</td>
+        </tr>
+        <tr>
+            <td>Impot</td>
+            <td>{{product.tax_id}}</td>
+        </tr>
+        <tr>
+            <td>Categorie</td>
+            <td>{{product.category_id}}</td>
+        </tr>
+    </tbody>
+
+</table>

@@ -7,32 +7,41 @@ import Service from "../interfaces/Service";
 })
 export default class PropostionTestService implements Service {
     public ID = new BehaviorSubject<string>(null);
-    _proposition = []
+
+    static _proposition = [{
+        'id': 1,
+        'supplier': 'Seymour Michel',
+        'product_id': 'Iphone 6s',
+        'purchase_date': '12 / 12 / 2020',
+        'purchase_invoiceNo': 'PRO 8796',
+        'purchase_status': 'Accepté'
+    }]
     static id = 0
 
     public getAll() {
-        return this._proposition;
+        return PropostionTestService._proposition;
     }
 
     public get(id) {
-        return this._proposition.find(item => item.id === id);
+        return PropostionTestService._proposition.find(item => item.id === id);
     };
 
     public create(data) {
         data["id"] = PropostionTestService.id
-        this._proposition.push(data);
+        PropostionTestService._proposition.push(data);
         PropostionTestService.id++
         console.log(data)
     };
 
-    public update(old, data) {
+    public update(data) {
 
-        var foundIndex = this._proposition.findIndex(item => item === old);
-        this._proposition[foundIndex] = data;
+        var foundIndex = PropostionTestService._proposition.findIndex(item => item.id === data.id);
+        PropostionTestService._proposition[foundIndex] = data;
     };
 
-    public remove(id) {
-        this._proposition.splice(id, 1);
+    public remove(product) {
+
+        PropostionTestService._proposition.splice(PropostionTestService._proposition.indexOf(product), 1);
     };
 
 

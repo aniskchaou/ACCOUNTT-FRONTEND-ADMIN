@@ -1,32 +1,40 @@
- <!-- Page Heading -->
- <h1 class="h3 mb-2 text-gray-800">Utilisateurs</h1>
-              
- <!-- DataTales Example -->
- <div class="card shadow mb-4">
-    
-     <div class="card-body">
-         <div class="table-responsive">
-             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+<h1 class="h3 mb-2 text-gray-800">{{fields.title}}</h1>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+    <div class="card-body">
+        <app-user-navigation></app-user-navigation>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Nom</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Actions</th>
+                        <th>{{fields.field_table_1}}</th>
+                        <th>{{fields.field_table_2}}</th>
+                        <th>{{fields.field_table_3}}</th>
+                        <th>{{fields.field_table_4}}</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>tiger@gmail.com</td>
-                        <td>comptable</td>
-                        <td><button disabled type="button" class="btn btn-primary btn-sm">voir</button>
-                            <button disabled type="button" class="btn btn-warning btn-sm">editer</button>
-                            <button disabled type="button" class="btn btn-danger btn-sm">Supprimer</button></td>
+                        <td>Anis</td>
+                        <td> <span class="badge badge-primary">aa@admin.com</span></td>
+                        <td>Admin</td>
+                        <td><button type="button" data-toggle="modal" data-target="#viewTax"
+                                class="btn btn-primary btn-sm"><i class="fas fa-address-book"></i></button>
+                            <button type="button" data-toggle="modal" data-target="#editTax"
+                                class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
                     </tr>
                 </tbody>
-             </table>
-             <button  type="button" class="btn btn-success btn-sm">Ajouter</button>
-         </div>
-     </div>
- </div>
+            </table>
+            <button type="button" class="btn btn-success btn-sm" data-toggle="modal"
+                data-target="#addTax">Ajouter</button>
+
+            <app-modal-user></app-modal-user>
+
+        </div>
+    </div>
+</div>
